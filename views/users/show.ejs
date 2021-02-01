@@ -1,0 +1,22 @@
+<%- include("../partials/header") %>
+
+<div class='row'>
+	<div class='col-md-4'>
+		<h1><%= user.firstName + " " + user.lastName %></h1>
+		<div class='thumbnail'>
+			<img src='<%= user.avatar %>' alt='user profile image'>
+			<div class='caption'><a href='mailto:<%= user.email %>'><%= user.email %></a></div>
+		</div>
+			Bacon ipsum dolor amet ground round meatball beef ribs tri-tip, chicken shank leberkas short loin cow bresaola ham doner chuck. Cupim swine chuck sausage. Swine fatback cupim frankfurter bresaola chicken pastrami kielbasa leberkas short loin kevin. Pork chop drumstick chuck tail shankle fatback doner turducken t-bone shank. Ground round tongue turducken doner rump jerky pig meatball pork. Short loin tail ham hock burgdoggen frankfurter, buffalo drumstick landjaeger kevin prosciutto picanha hamburger. Pig meatball t-bone shankle.
+	</div>
+	<div class='col-md-8'>
+		<h3><%= user.username %>'s campgrounds:</h3>
+		<ul>
+		<% campgrounds.forEach(function(campground) { %>
+		<li><a href='/campgrounds/<%= campground.id %>'><%= campground.name %></a></li>
+		<% }); %>
+		</ul>
+	</div>
+</div>
+
+<%- include("../partials/footer") %>
